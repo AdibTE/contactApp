@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const config = require('config');
 const db = config.get('mongoURI');
+    // "mongoURI": "mongodb://localhost:27017/ContactsApp",
 
 const connectDB = async () => {
     try {

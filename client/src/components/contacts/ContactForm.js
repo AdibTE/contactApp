@@ -9,12 +9,11 @@ const ContactForm = () => {
         name: '',
         email: '',
         phone: '',
-        type: 'personal'
+        type: 'personal',
     });
     const { name, email, phone, type } = contact;
 
-    useEffect(
-        () => {
+    useEffect(() => {
             if (current) {
                 setContact(current);
             } else {
@@ -25,9 +24,7 @@ const ContactForm = () => {
                     type: 'personal'
                 });
             }
-        },
-        [ contactContext, current ]
-    );
+        },[ contactContext ]);
 
     const onChange = (e) => {
         setContact({
@@ -51,6 +48,7 @@ const ContactForm = () => {
             phone: '',
             type: 'personal'
         });
+        // contactContext.clearCurrent()
     };
     return (
         <form onSubmit={onsubmit}>
